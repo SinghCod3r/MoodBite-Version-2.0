@@ -24,3 +24,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* styles/globals.css */
+
+.flipper-container {
+    perspective: 1000px;
+}
+
+.flipper {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: flip 4s infinite; /* Increased duration for slower, more graceful flip */
+}
+
+.flipper div {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flipper .front {
+    transform: rotateX(0deg);
+}
+
+.flipper .back {
+    transform: rotateX(180deg);
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    45% {
+        transform: rotateX(0deg); /* Hold on the front text */
+    }
+    50% {
+        transform: rotateX(180deg);
+    }
+    95% {
+        transform: rotateX(180deg); /* Hold on the back text */
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}

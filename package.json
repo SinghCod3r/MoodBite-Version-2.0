@@ -12,9 +12,11 @@
     "@google/generative-ai": "^0.24.1",
     "@supabase/supabase-js": "^2.52.1",
     "dotenv": "^17.2.1",
+    "framer-motion": "^12.23.11",
     "next": "15.4.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-textarea-autosize": "^8.5.9"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
