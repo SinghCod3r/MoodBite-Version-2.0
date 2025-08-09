@@ -73,3 +73,17 @@ body {
         transform: rotateX(360deg);
     }
 }
+/* styles/globals.css */
+
+/* For a subtle, modern scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 20px;
+    border: 3px solid transparent;
+}
