@@ -188,7 +188,7 @@ export default function HomePage() {
     }
 
     return (
-        <div className="w-full h-screen bg-black flex flex-col text-white" onClick={handleInterrupt}>
+        <div className="w-full min-h-dvh bg-black flex flex-col text-white" onClick={handleInterrupt}>
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] -z-10"></div>
             
             <header className="relative z-20 p-4 text-center flex-shrink-0">
@@ -218,7 +218,7 @@ export default function HomePage() {
                 )}
             </main>
             
-            <footer className="relative z-20 w-full max-w-3xl mx-auto p-4 pt-2">
+            <footer className="relative z-20 w-full max-w-3xl mx-auto p-4 pt-2 flex-shrink-0">
                 <AnimatePresence>
                     {filePreviews.length > 0 && (
                         <motion.div 
@@ -249,6 +249,7 @@ export default function HomePage() {
                     isLoading={isLoading}
                 />
                 {inputMode && ( <InputOverlay mode={inputMode} onSubmit={handleOverlaySubmit} onClose={() => setInputMode(null)} /> )}
+                <span className='text-sm text-gray-400 text-center block mt-2'>&copy; to MoobiteAI Teams</span>
             </footer>
         </div>
     );
