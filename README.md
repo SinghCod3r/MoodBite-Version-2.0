@@ -1,52 +1,44 @@
-# MoodBite AI
+# MoodBite
 
-MoodBite AI suggests Indian food based on your mood. Tell the app how you feel, and it recommends dishes that match your emotional state.
+Tell us how you're feeling, and we'll suggest the perfect Indian dish to match your mood.
 
-Live demo: https://mood-bite-version-2-0.vercel.app/
+**Try it here:** https://mood-bite-version-2-0.vercel.app/
 
-## What it does
+## About
 
-The app takes input about your current mood and suggests Indian food that fits how you're feeling. For example, if you're stressed, it might suggest comfort food like khichdi. If you're happy, it might recommend something celebratory.
+Food affects our emotions, and our emotions affect what we crave. MoodBite bridges this connection by analyzing how you feel and recommending Indian dishes that perfectly complement your emotional state.
 
-## Features
+Stressed? We might suggest comforting khichdi. Celebrating something? How about festive biryani. Feeling nostalgic? Perhaps some home-style dal chawal.
 
-- Text input for describing your mood
-- Voice input support
-- Photo upload to identify ingredients you have
-- Food suggestions based on mood analysis
-- Voice feedback that reads suggestions aloud
-- Works on mobile and desktop
+## What You Can Do
 
-## How it works
+- Describe your mood in text or speak it aloud
+- Upload photos of ingredients you have at home
+- Get personalized Indian food recommendations
+- Listen to suggestions read back to you
+- Use it anywhere - phone, tablet, or computer
 
-1. You tell the app how you feel (typing, speaking, or uploading ingredient photos)
-2. The app analyzes your mood using AI models
-3. It suggests Indian dishes that match your mood
-4. You get explanations for why each dish was recommended
+## How It Works
 
-## Tech used
+It's simple: share your mood, get your dish, understand why it fits.
 
-- Next.js and React for the website
-- Google Gemini AI for understanding mood and images
-- HuggingFace AI models for emotion detection
-- Tailwind CSS for styling
-- Vercel for hosting
+The app uses AI to understand the nuances of your emotional state and matches it with dishes from Indian cuisine that historically complement those feelings.
 
-## Setup
+## Running Locally
 
-1. Clone this repository
+**Step 1: Get the code**
 ```bash
 git clone https://github.com/RISHABH4SAHNI/MoodBite-Version-2.0.git
 cd MoodBite-Version-2.0
 ```
 
-2. Install dependencies
+**Step 2: Install what you need**
 ```bash
 npm install
 ```
 
-3. Create environment file
-Create a file called `.env.local` and add your API keys:
+**Step 3: Set up your API keys**
+Create a file named `.env.local` in the root folder:
 
 ```env
 GEMINI_API_KEY=your_key_here
@@ -56,53 +48,31 @@ GOOGLE_SEARCH_API_KEY=your_key_here
 SEARCH_ENGINE_ID=your_id_here
 ```
 
-4. Start the development server
+**Step 4: Start the app**
 ```bash
 npm run dev
 ```
 
-5. Open http://localhost:3000 in your browser
+**Step 5: Visit http://localhost:3000**
 
-## Getting API keys
+## Getting Your API Keys
 
-You need API keys from these services:
-- Google AI: https://makersuite.google.com/app/apikey
-- HuggingFace: https://huggingface.co/settings/tokens
-- OpenRouter: https://openrouter.ai/
-- Google Search: https://developers.google.com/custom-search/v1/overview
+You'll need free accounts with these services:
 
-## API endpoints
+- **Google Gemini:** Visit https://makersuite.google.com/app/apikey
+- **HuggingFace:** Go to https://huggingface.co/settings/tokens
+- **OpenRouter:** Sign up at https://openrouter.ai/
+- **Google Search:** Get keys at https://developers.google.com/custom-search/v1/overview
 
-### POST /api/suggestFood
-Send your mood and get food suggestions.
+## Built With
 
-Request:
-```json
-{
-  "text": "I feel stressed",
-  "ingredients": ["rice", "dal"]
-}
-```
+This project uses Next.js for the web interface, Google's Gemini AI for understanding your mood and analyzing ingredient photos, HuggingFace models for emotion detection, and Tailwind CSS for a clean design.
 
-Response:
-```json
-{
-  "predictedMood": "stressed",
-  "suggestedFood": "Khichdi",
-  "reason": "Comfort food that helps with stress",
-  "confidenceScore": 85
-}
-```
+## For Developers
 
-### POST /api/identifyIngredients
-Upload a photo to identify ingredients.
-```json
-{
-  "ingredients": ["tomatoes", "onions"]
-}
-```
+The app exposes two main API endpoints:
 
-## Project structure
+**POST /api/suggestFood** - Send mood text and optional ingredients to get food recommendations
 
 ```
 ├── components/    # React components
