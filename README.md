@@ -1,38 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# MoodBite
 
-## Getting Started
+Tell us how you're feeling, and we'll suggest the perfect Indian dish to match your mood.
 
-First, run the development server:
+**Try it here:** https://mood-bite-version-2-0.vercel.app/
 
+## About
+
+Food affects our emotions, and our emotions affect what we crave. MoodBite bridges this connection by analyzing how you feel and recommending Indian dishes that perfectly complement your emotional state.
+
+Stressed? We might suggest comforting khichdi. Celebrating something? How about festive biryani. Feeling nostalgic? Perhaps some home-style dal chawal.
+
+## What You Can Do
+
+- Describe your mood in text or speak it aloud
+- Upload photos of ingredients you have at home
+- Get personalized Indian food recommendations
+- Listen to suggestions read back to you
+- Use it anywhere - phone, tablet, or computer
+
+## How It Works
+
+It's simple: share your mood, get your dish, understand why it fits.
+
+The app uses AI to understand the nuances of your emotional state and matches it with dishes from Indian cuisine that historically complement those feelings.
+
+## Running Locally
+
+**Step 1: Get the code**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/RISHABH4SAHNI/MoodBite-Version-2.0.git
+cd MoodBite-Version-2.0
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Step 2: Install what you need**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+**Step 3: Set up your API keys**
+Create a file named `.env.local` in the root folder:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```env
+GEMINI_API_KEY=your_key_here
+HUGGING_FACE_API_TOKEN=your_token_here
+OPENROUTER_API_KEY=your_key_here
+GOOGLE_SEARCH_API_KEY=your_key_here
+SEARCH_ENGINE_ID=your_id_here
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+**Step 4: Start the app**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Step 5: Visit http://localhost:3000**
 
-## Learn More
+## Getting Your API Keys
 
-To learn more about Next.js, take a look at the following resources:
+You'll need free accounts with these services:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **Google Gemini:** Visit https://makersuite.google.com/app/apikey
+- **HuggingFace:** Go to https://huggingface.co/settings/tokens
+- **OpenRouter:** Sign up at https://openrouter.ai/
+- **Google Search:** Get keys at https://developers.google.com/custom-search/v1/overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Built With
 
-## Deploy on Vercel
+This project uses Next.js for the web interface, Google's Gemini AI for understanding your mood and analyzing ingredient photos, HuggingFace models for emotion detection, and Tailwind CSS for a clean design.
 
-Live Project URL LInk --> https://mood-bite-version-2-0.vercel.app/
+## For Developers
+
+The app exposes two main API endpoints:
+
+**POST /api/suggestFood** - Send mood text and optional ingredients to get food recommendations
+
+```
+├── components/    # React components
+├── pages/         # Website pages
+│   └── api/       # Backend functions
+├── public/        # Images and static files
+└── styles/        # CSS files
